@@ -1,4 +1,4 @@
-# Web Programming
+# Web Programming - GSU
 
 <h3>Project 1</h3>
 <h3>Group Members:</h3>
