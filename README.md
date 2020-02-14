@@ -1,7 +1,7 @@
 # Web Programming - GSU
 
 <h3>Project 1:</h3>
-<p>
+<p style="color:blue">
   The goal of this project is to create a board game in HTML/CSS without using any JavaScript.
 </p>
 <h3>Group Members:</h3>
