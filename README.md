@@ -1,6 +1,6 @@
 # Web Programming - GSU
 
-<h3>Project 1:</h3>
+<h3>Project 1: CSS Soccer Game</h3>
 <p>
   The goal of this project is to create a board game in HTML/CSS without using any JavaScript.
 </p>
