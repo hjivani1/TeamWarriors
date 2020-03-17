@@ -1,53 +1,70 @@
+<?php
+session_start();
+if(isset($_POST['Submit'])){
+    $logins = array('harsh' => 'jivani','jacob' => 'nguyen','sunny' => 'patel');
+    $strTemp = trim(file_get_contents('rank.txt'));
+    $_SESSION['tempArray'] = explode(" ",$strTemp);
+
+    $_SESSION['Username'] = isset($_POST['Username']) ? $_POST['Username'] : '';
+    $_SESSION['Password'] = isset($_POST['Password']) ? $_POST['Password'] : '';
+    
+    $_SESSION['ranking'] = array();
+
+    if(strcmp($strTemp,'') != 0){
+        for($i = 0 ; $i< count($_SESSION['tempArray']); $i+=2){
+            $array = array();
+            $array[$_SESSION['tempArray'][$i]] = $_SESSION['tempArray'][$i+1];
+            $_SESSION['ranking'] = array_merge($_SESSION['ranking'],$array);
+        }
+    } else {
+        $_SESSION['ranking'][$_SESSION['Username']] = 0;
+    }
+
+    $_SESSION['numbWin'] = 0;
+    if (isset($logins[$_SESSION['Username']]) && $logins[$_SESSION['Username']] == $_SESSION['Password']){
+        //$_SESSION['Username']=$logins[$_SESSION['Username']];
+        if (array_key_exists($_SESSION['Username'],$_SESSION['ranking'])){
+            $_SESSION['numbWin'] = $_SESSION['ranking'][$_SESSION['Username']];
+        }
+        header("location:index.php");
+        exit();
+    } else {
+        $msg="<span style='color:red'>Invalid Login Details</span>";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-<?php session_start(); /* Starts the session */
-/* Check Login form submitted */if(isset($_POST['Submit'])){
-/* Define username and associated password array */$logins = array('harsh' => 'jivani','jacob' => 'nguyen','sunny' => 'patel');
 
-/* Check and assign submitted Username and Password to new variable */$Username = isset($_POST['Username']) ? $_POST['Username'] : '';
-$Password = isset($_POST['Password']) ? $_POST['Password'] : '';
-
-/* Check Username and Password existence in defined array */if (isset($logins[$Username]) && $logins[$Username] == $Password){
-/* Success: Set session variables and redirect to Protected page  */$_SESSION['UserData']['Username']=$logins[$Username];
-header("location:index.php");
-exit;
-} else {
-/*Unsuccessful attempt: Set error message */$msg="<span style='color:red'>Invalid Login Details</span>";
-}
-}
-?>
-
-<form action="" method="post" name="Login_Form">
-  <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
-    <?php if(isset($msg)){?>
-    <tr>
-      <td colspan="2" align="center" valign="top"><?php echo $msg;?></td>
-    </tr>
-    <?php } ?>
-    <tr>
-      <td colspan="2" align="left" valign="top"><h3>Login</h3></td>
-    </tr>
-    <tr>
-      <td align="right" valign="top">Username</td>
-      <td><input name="Username" type="text" class="Input"></td>
-    </tr>
-    <tr>
-      <td align="right">Password</td>
-      <td><input name="Password" type="password" class="Input"></td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td><input name="Submit" type="submit" value="Login" class="Button3"></td>
-    </tr>
-  </table>
-</form>
-
+<div class="wrap">
+        <form class="login-form" action="" method="post" name="Login_Form">
+            <div class="form-header">
+                <h3 style="color:red">Rock, Paper, Scissors!</h3>
+                <p>Made by: Jacob Nguyen, Sunny Patel, Harsh Jivani</p>
+            </div>
+            <!--Email Input-->
+            <div class="form-group">
+                <input type="text" name="Username" class="form-input" placeholder="username" required="" autofocus="">
+            </div>
+            <!--Password Input-->
+            <div class="form-group">
+                <input type="password" class="form-input" name="Password" placeholder="password" required="">
+            </div>
+            <!--Login Button-->
+            <div class="form-group">
+                <button class="form-button" name="Submit" value="Login" type="submit">Login</button>
+            </div>
+            
+        </form>
+    </div>
 
 </body>
 </html>
