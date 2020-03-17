@@ -10,6 +10,7 @@
 <body>
 
 <div class="outters">
+    <h3>Leaderboard</h3>
 <?php
     session_start();
     $_SESSION['ranking'][$_SESSION['Username']] = $_SESSION['numbWin'];

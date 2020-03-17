@@ -1,11 +1,14 @@
+/* for all pages */
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
 }
+/* for all pages */
 html{
     height: 100%;
 }
+/* for all pages */
 body{
     font-family: 'Segoe UI', sans-serif;;
     font-size: 1rem;
@@ -14,6 +17,10 @@ body{
     background-image: linear-gradient(to right, #3ab5b0 0%, #3d99be 31%, #56317a 100%);
     
 }
+
+
+
+/* Login page */
 .wrap {
     width: 100%;
     height: 100%;
@@ -22,6 +29,7 @@ body{
     align-items: center;
     background: #fafafa;
 }
+/* Login page */
 .login-form{
     width: 350px;
     margin: 0 auto;
@@ -29,15 +37,18 @@ body{
     padding: 2rem;
     background: #ffffff;
 }
+/* Login page */
 .form-input{
     background: #fafafa;
     border: 1px solid #eeeeee;
     padding: 12px;
     width: 100%;
 }
+/* Login page */
 .form-group{
     margin-bottom: 1rem;
 }
+/* Login page */
 .form-button{
     background: #69d2e7;
     border: 1px;
@@ -47,18 +58,20 @@ body{
     text-transform: uppercase;
     font-size: larger;
 }
-
+/* Login page */
 .form-button:hover{
     background: #69c8e7;
 }
+/* Login page */
 .form-header{
     text-align: center;
     margin-bottom : 2rem;
 }
+/* Login page */
 .form-footer{
     text-align: center;
 }
-
+/* for logging out button */
 .form-button-logout{
     background: #c73a3a;
     border: 1px ;
@@ -68,10 +81,11 @@ body{
     text-transform: uppercase;
     font-size: larger;
 }
+/* for logging out button */
 .form-button-logout:hover{
     background: #e40e0e;
 }
-
+/* ranking button */
 .form-button-ranking{
     background: #1f50d8;
     border: 1px ;
@@ -81,12 +95,15 @@ body{
     text-transform: uppercase;
     font-size: larger;
 }
+/* ranking button */
 .form-button-ranking:hover{
     background: #0f44d6;
 }
 
-body {
-    background-image: linear-gradient(to right, #3ab5b0 0%, #3d99be 31%, #56317a 100%);       }
+
+
+
+/* for index page */
 h1{
     text-align: center;
     margin: 0 20% 0 20%;
@@ -95,7 +112,7 @@ h1{
     border-color: green;
     
 }
-
+/* for index page */
 .result{
     text-align: center;
     margin: 0 20% 5% 20%;
@@ -103,7 +120,7 @@ h1{
     border-width: 2px;
     border-color: brown;
 }
-
+/* for index page */
 .play{
     text-align: center;
     margin: 0 20% 5% 20%;
@@ -111,13 +128,13 @@ h1{
     border-width: 2px;
     border-color: pink;
 }
-
+/* for index page */
 .logout{
     text-align: center;
     margin: 0 40% 5% 40%;
     border-radius: 13px;
 }
-
+/* for index page */
 .RPS {
     display: inline-block;
     margin: 0 0% 0 12%;
@@ -126,7 +143,7 @@ h1{
     border-color: red;
     
 }
-
+/* for index page */
 .outter{
     margin: auto;
     border-style: hidden;
@@ -135,10 +152,13 @@ h1{
     border-color: blue;
 }
 
+
+/* for ranking page */
 .outters{
-    margin: auto;
+    margin: 10% 0 0 40%;
     border-style: solid;
-    width: 50%;
+    width: 20%;
     border-width: 2px;
     border-color: blue;
+    text-align: center;
 }

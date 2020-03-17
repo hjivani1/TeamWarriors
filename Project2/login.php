@@ -64,7 +64,7 @@ if(isset($_POST['Submit'])){
             </div>
             
         </form>
-    </div>
+</div>
 
 </body>
 </html>

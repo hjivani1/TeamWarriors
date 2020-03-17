@@ -27,7 +27,6 @@ if (isset($_POST['ranking']) ) {
 </head>
 
 <body>
-    <div class="container">
         
     <h1>Rock, Paper, Scissors!</h1>
     <h3 style="text-align: center; color:blue; ">You got this,  <?php print $_SESSION['Username']; ?>!</h3>
@@ -82,61 +81,60 @@ if (isset($_POST['ranking']) ) {
     ?>
 
     <form method="post" id="form">
-    <div class="outter">
-    <div class="RPS">
-        <label for="rock"><img src="rock.png" height="100px" width="120px"></label><br>
-        <input type="radio" style="vertical-align: middle;" name="human" id="rock" value="0">
-        <label for="0">Rock!</label>
-    </div>
+        <div class="outter">
+            <div class="RPS">
+                <label for="rock"><img src="rock.png" height="100px" width="120px"></label><br>
+                <input type="radio" style="vertical-align: middle;" name="human" id="rock" value="0">
+                <label for="0">Rock!</label>
+            </div>
 
-    <div class="RPS">
-        <label for="paper"><img src="paper.png" height="100px" width="120px"></label><br>
-        <input type="radio" style="vertical-align: middle; margin: 0px;" name="human" id="paper" value="1">
-        <label for="1">Paper!</label>
-    </div>
+            <div class="RPS">
+                <label for="paper"><img src="paper.png" height="100px" width="120px"></label><br>
+                <input type="radio" style="vertical-align: middle; margin: 0px;" name="human" id="paper" value="1">
+                <label for="1">Paper!</label>
+            </div>
 
-    <div class="RPS">
-        <label for="scissors"><img src="scissors.png" height="100px" width="120px"></label><br>
-        <input type="radio" style="vertical-align: middle; margin: 0px;" name="human" id="scissors" value="2">
-        <label for="2">Scissors!</label>
-    </div>
-    </div>
-    <br>
-    <br>
+            <div class="RPS">
+                <label for="scissors"><img src="scissors.png" height="100px" width="120px"></label><br>
+                <input type="radio" style="vertical-align: middle; margin: 0px;" name="human" id="scissors" value="2">
+                <label for="2">Scissors!</label>
+            </div>
+        </div>
+        <br>
+        <br>
 
-    <!--Play Button-->
-    <div class="logout">
-    <button class="form-button" form="form" name="submit" value="Play" type="submit">Play!</button>
-    </div>
-
+        <!--Play Button-->
+        <div class="logout">
+        <button class="form-button" form="form" name="submit" value="Play" type="submit">Play!</button>
+        </div>
     </form>
 
     <div class="result">
-    <?php  
+        <?php  
 
-    if (isset($_POST['submit']) && isset($_POST['human']))  {
-        $result = check($computer, $human);
+        if (isset($_POST['submit']) && isset($_POST['human']))  {
+            $result = check($computer, $human);
 
-        print 'Your Choice: <img width="30px" height="30px" src="'.$names[$human].'.png"> Computer Choice: <img width="30px" height="30px" src="'.$names[$computer].'.png"><br>'.$result.'<br>';
-        print "Your score is:".$_SESSION['numbWin'];
-        //print_r($_SESSION['ranking']);
+            print 'Your Choice: <img width="30px" height="30px" src="'.$names[$human].'.png"> Computer Choice: <img width="30px" height="30px" src="'.$names[$computer].'.png"><br>'.$result.'<br>';
+            print "Your score is:".$_SESSION['numbWin'];
+            //print_r($_SESSION['ranking']);
 
 
-    } else if ( isset($_POST['submit']) && !isset($_POST['human'])){
-        print "Please choose one option.<br>";
-        print "Your score is:".$_SESSION['numbWin'];
-    }
-    ?>
+        } else if ( isset($_POST['submit']) && !isset($_POST['human'])){
+            print "Please choose one option.<br>";
+            print "Your score is:".$_SESSION['numbWin'];
+        }
+        ?>
     </div>
     <br>
     <!--Ranking Button-->
     <div class="logout">
-    <button class="form-button-ranking" form="form" name="ranking" value="ranking" type="submit">Ranking</button>
+        <button class="form-button-ranking" form="form" name="ranking" value="ranking" type="submit">Ranking</button>
     </div>
 
     <!--Logout Button-->
     <div class="logout">
-    <button class="form-button-logout" form="form" name="logout" value="Logout" type="submit">Logout</button>
+        <button class="form-button-logout" form="form" name="logout" value="Logout" type="submit">Logout</button>
     </div>
 
 </body>
