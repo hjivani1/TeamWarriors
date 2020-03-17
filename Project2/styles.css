@@ -134,3 +134,11 @@ h1{
     border-width: 2px;
     border-color: blue;
 }
+
+.outters{
+    margin: auto;
+    border-style: solid;
+    width: 50%;
+    border-width: 2px;
+    border-color: blue;
+}
