@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +9,17 @@
 </head>
 
 <body>
-
-<div class="outters">
-    <h3>Leaderboard</h3>
+<div>
+    <br>
+        <h1 class="cup"><img src="cup.png" alt="The Soccer Ball"></h1>
+        <br>
+        <br>
+        <h1 class="congrat">Congratulation!</h1>
+        <br>
+        <h1 class="win">You win!</h1>
+    </div>
+<div class="outters" style="margin-top: 5px;">
+    <h3>Leaderboard:</h3>
 <?php
     session_start();
     $_SESSION['ranking'][$_SESSION['Username']] = $_SESSION['numbWin'];
@@ -31,10 +40,9 @@
 ?>
 </div>
 <div class="result">
-<br><br><br>
-    <br><br><br>
+<br><br>
     <div>
-        <form class="login-form" action="login.php" method="post">
+        <form class="login-form-ranking" action="login.php" method="post">
             <div class="form-group">
                 <button class="form-button" name="Submit" value="Logout" type="submit">Logout</button>
             </div>
