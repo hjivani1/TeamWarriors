@@ -1,4 +1,13 @@
-
+<?php
+    session_start();
+    $_SESSION['ranking'][$_SESSION['Username']] = $_SESSION['numbWin'];
+    $strTemp3 = '';
+    foreach ($_SESSION['ranking'] as $user=>$score){
+        $strTemp3 = $strTemp3." ".$user." ".$score;
+    }
+    file_put_contents('rank.txt',$strTemp3);
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,26 +18,9 @@
 </head>
 
 <body>
-<div>
-    <br>
-        <h1 class="cup"><img src="cup.png" alt="The Soccer Ball"></h1>
-        <br>
-        <br>
-        <h1 class="congrat">Congratulation!</h1>
-        <br>
-        <h1 class="win">You win!</h1>
-    </div>
-<div class="outters" style="margin-top: 5px;">
-    <h3>Leaderboard:</h3>
-<?php
-    session_start();
-    $_SESSION['ranking'][$_SESSION['Username']] = $_SESSION['numbWin'];
-    $strTemp3 = '';
-    foreach ($_SESSION['ranking'] as $user=>$score){
-        $strTemp3 = $strTemp3." ".$user." ".$score;
-    }
-    file_put_contents('rank.txt',$strTemp3);
 
+<?php
+    print '<div class="rank-leadingboard">';
     arsort($_SESSION['ranking']);
     $i = 1;
 
@@ -36,19 +28,19 @@
         print $i.". ".$user." ".$score."<br>";
         $i += 1;
     }
+    print '</div>';
+
+    print '<h1 class="rank-cup"><img src="cup.png" alt="The Soccer Ball"></h1>
+    <br>
+    <h1 class="rank-winner">Congratulations, '.ucfirst(array_keys($_SESSION['ranking'])[0]).'!</h1>
+    <br>
+    <h1 class="rank-win">You win!</h1>';
 
 ?>
-</div>
-<div class="result">
-<br><br>
-    <div>
-        <form class="login-form-ranking" action="login.php" method="post">
-            <div class="form-group">
-                <button class="form-button" name="Submit" value="Logout" type="submit">Logout</button>
-            </div>
+        <form class="rank-form" action="login.php" method="post">
+                <button class="rank-button-logout button" name="Submit" value="Logout" type="submit">Log out</button>
         </form>
-    </div>
-</div>
+
 
 </body>
 </html>
