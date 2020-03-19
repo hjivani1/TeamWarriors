@@ -35,14 +35,13 @@
     <h1 class="rank-winner">Congratulations, '.ucfirst(array_keys($_SESSION['ranking'])[0]).'!</h1>
     <br>
     <h1 class="rank-win">You win!</h1>';
-
 ?>   
-    <form class="rank-form" action="login.php" method="post">
-        <button class="rank-button-logout button" name="Submit" value="Logout" type="submit">Log out</button>
-    </form>
 
-    <a href="index.php" class="rank-button-logout button" style="text-decoration: none;">&laquo; Back to Game</a>
-
-
+<form class="rank-form" action="login.php" method="post">
+    <button class="rank-button-logout button" name="Submit" value="Logout" type="submit">Log out</button>
+</form>
+    <br>    
+<a href="index.php" class="rank-button-back" style="text-decoration: none;">&laquo; Back to Game</a>
+    
 </body>
 </html>

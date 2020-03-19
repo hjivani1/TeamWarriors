@@ -218,6 +218,23 @@ h1{
     background: #0f44d6;
 }
 
+.rank-button-back{
+    background:#f44336;
+    border: 1px ;
+    border-radius: 15px;
+    padding: 10px;
+    overflow: auto;
+    text-transform: uppercase;
+    font-size: larger;
+    position: absolute;
+    bottom: 470px;
+    left: 20px;
+}
+
+.rank-button-back:hover{
+    background: #c02a2a;
+}
+
 .rank-cup img{
     width: 20%;
     height: 20%;
