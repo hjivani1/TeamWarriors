@@ -6,8 +6,8 @@
         $strTemp3 = $strTemp3." ".$user." ".$score;
     }
     file_put_contents('rank.txt',$strTemp3);
-    
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,10 +36,12 @@
     <br>
     <h1 class="rank-win">You win!</h1>';
 
-?>
-        <form class="rank-form" action="login.php" method="post">
-                <button class="rank-button-logout button" name="Submit" value="Logout" type="submit">Log out</button>
-        </form>
+?>   
+    <form class="rank-form" action="login.php" method="post">
+        <button class="rank-button-logout button" name="Submit" value="Logout" type="submit">Log out</button>
+    </form>
+
+    <a href="index.php" class="rank-button-logout button" style="text-decoration: none;">&laquo; Back to Game</a>
 
 
 </body>

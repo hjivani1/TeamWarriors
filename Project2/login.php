@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_POST['Submit'])){
-    $logins = array('harsh' => 'jivani','jacob' => 'nguyen','sunny' => 'patel');
+    $logins = array('harsh' => 'jivani','jacob' => 'nguyen','sunny' => 'patel','guest' => 'guest');
     $strTemp = trim(file_get_contents('rank.txt'));
     $_SESSION['tempArray'] = explode(" ",$strTemp);
     $_SESSION['Username'] = isset($_POST['Username']) ? $_POST['Username'] : '';
@@ -45,7 +45,7 @@ if(isset($_POST['Submit'])){
 </head>
 
 <body>
-
+<br><br>
 <div class="login-wrap">
         <form class="login-form" action="" method="post" name="Login_Form">
             <div class="login-form-header">
@@ -63,7 +63,12 @@ if(isset($_POST['Submit'])){
             <div class="login-form-group">
                 <button class="login-form-button button" name="Submit" value="Login" type="submit">Log in</button>
             </div>
-            
+            <p>How to Play: <br>
+            1. Login using the following credentials: <br>
+            username: 'guest' & password: 'guest' <br><br>
+            ************* Rules: *************<br>
+            Select either Rock, Paper, or Scissors. <br> * Rock wins against scissors. <br> * Scissors win against paper. <br> * Paper wins against rock.
+            </p>
         </form>
     </div>
 
