@@ -128,8 +128,8 @@ h1{
     overflow: auto;
     text-transform: uppercase;
     font-size: larger;
-    position: absolute;
-    bottom: 500px;
+    position: fixed;
+    top: 60px;
     left: 20px;
 }
 
@@ -145,9 +145,10 @@ h1{
     overflow: auto;
     text-transform: uppercase;
     font-size: larger;
-    position: absolute;
-    bottom: 550px;
+    position: fixed;
+    top: 10px;
     left: 20px;
+
 }
 
 .index-button-ranking:hover{
@@ -194,12 +195,7 @@ h1{
  
 }
 
-.rank-form{
-    width: 350px;
-    margin: 5% auto;
-    padding: 2rem;
 
-}
 
 .rank-button-logout{
     background:#69d2e7;
@@ -209,8 +205,8 @@ h1{
     overflow: auto;
     text-transform: uppercase;
     font-size: larger;
-    position: absolute;
-    bottom: 550px;
+    position: fixed;
+    top: 60px;
     left: 20px;
 }
 
@@ -226,8 +222,8 @@ h1{
     overflow: auto;
     text-transform: uppercase;
     font-size: larger;
-    position: absolute;
-    bottom: 470px;
+    position: fixed;
+    top: 10px;
     left: 20px;
 }
 

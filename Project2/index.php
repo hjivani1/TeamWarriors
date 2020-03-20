@@ -23,6 +23,21 @@ if (isset($_POST['ranking']) ) {
 </head>
 
 <body>
+
+
+
+    <div class="index-button">
+    <button class="index-button-ranking button" form="form" name="ranking" value="ranking" type="submit">Ranking</button>
+    </div>
+
+    <div class="index-button">
+    <button class="index-button-logout button" form="form" name="logout" value="Logout" type="submit">Log out</button>
+    </div>
+
+
+
+
+
     <div class="container">
         
     <h1>Rock, Paper, Scissors!</h1>
@@ -98,7 +113,7 @@ if (isset($_POST['ranking']) ) {
     if (isset($_POST['submit']) && isset($_POST['human']))  {
         $result = check($computer, $human);
 
-        print 'Your Choice: <img width="30px" height="30px" src="'.$names[$human].'.png"> Computer Choice: <img width="30px" height="30px" src="'.$names[$computer].'.png"><br>'.$result.'<br>';
+        print 'Your Choice: <img width="50px" height="50px" src="'.$names[$human].'.png"> Computer Choice: <img width="50px" height="50px" src="'.$names[$computer].'.png"><br>'.$result.'<br>';
         print "Your score is:".$_SESSION['numbWin'];
         //print_r($_SESSION['ranking']);
 
@@ -114,14 +129,6 @@ if (isset($_POST['ranking']) ) {
     <button class="index-button-play button" form="form" name="submit" value="Play" type="submit">Play!</button>
     </div>
 
-
-    <div class="index-button">
-    <button class="index-button-ranking button" form="form" name="ranking" value="ranking" type="submit">Ranking</button>
-    </div>
-
-    <div class="index-button">
-    <button class="index-button-logout button" form="form" name="logout" value="Logout" type="submit">Log out</button>
-    </div>
 
 
 </body>

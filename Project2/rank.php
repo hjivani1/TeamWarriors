@@ -19,6 +19,14 @@
 
 <body>
 
+<form class="rank-form" action="login.php" method="post">
+    <button class="rank-button-logout button" name="Submit" value="Logout" type="submit">Log out</button>
+</form>
+    <br>    
+<form class="rank-form" action="index.php" method="post">
+    <button class="rank-button-back button" name="Submit" value="back" type="submit">Back to the game</button>
+</form>
+
 <?php
     print '<div class="rank-leadingboard">';
     arsort($_SESSION['ranking']);
@@ -37,11 +45,7 @@
     <h1 class="rank-win">You win!</h1>';
 ?>   
 
-<form class="rank-form" action="login.php" method="post">
-    <button class="rank-button-logout button" name="Submit" value="Logout" type="submit">Log out</button>
-</form>
-    <br>    
-<a href="index.php" class="rank-button-back" style="text-decoration: none;">&laquo; Back to Game</a>
+
     
 </body>
 </html>
